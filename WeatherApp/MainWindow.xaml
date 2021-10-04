@@ -1,0 +1,21 @@
+﻿<Window x:Class="WeatherApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp"
+        mc:Ignorable="d"
+        Title="WeatherApp" Height="650" Width="515">
+    <Grid>
+        <ListView Margin="10" Name="weatherList">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="City" Width="150" DisplayMemberBinding="{Binding City}" />
+                    <GridViewColumn Header="Temperature" Width="75" DisplayMemberBinding="{Binding Temperature}" />
+                    <GridViewColumn Header="Weather" Width="150" DisplayMemberBinding="{Binding Description}" />
+                    <GridViewColumn Header="Wind [m/s]" Width="75" DisplayMemberBinding="{Binding Wind}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
