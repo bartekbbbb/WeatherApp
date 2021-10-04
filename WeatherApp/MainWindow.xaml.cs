@@ -17,6 +17,7 @@ namespace WeatherApp
     {
         public List<string> cities = new List<string>();
         public List<Weather> list = new List<Weather>();
+        public string API_ID = "your api key";
 
         public MainWindow()
         {
@@ -64,7 +65,7 @@ namespace WeatherApp
         {
             for (int i = 0; i < 42; i++)
             {
-                string temp = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&APPID=2b662717731b094905ed744d9c344146&units=metric", cities[i].ToLower());
+                string temp = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&APPID={1}&units=metric", cities[i].ToLower(), API_ID);
                 RestClient mainClient = new RestClient(temp);
                 mainClient.Timeout = -1;
                 RestRequest req = new RestRequest(Method.GET);
